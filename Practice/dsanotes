@@ -1,0 +1,20 @@
+DSA notes 
+
+Big O:- Three types of Big O O(n), O(1), O (log n)
+Array:-
+1.Hashmapping:- 
+a.How to avoid collision :-
+    Linear Chaining:- We will store linked list in the index to avoid collision it will store multiple values in a place it will create big link list while searching it will be again O(n).If the hash function is defined great it will be O(1).
+    Linear Probing :- In linear probing the value will check if something is already their in the index assigned to it if yes it will search for the free space available anywhere.
+    
+    
+4. Stack :- In stack we use LIFO in simple context like if we are visiting a website then we selected some page then another then another now we want to go back will use some formula where the webpage we are at right will be thrown out and the previous one we will accept. And like we use ctrl z it is also stack we undo the last step..............push/pop element O(1). Search of element by value O(n).
+
+5. Queue :- It is based over FIFO same like Stack 
+
+6. Tree :- tree structure level 0 1 2 something like this node and child node  
+
+7. BST 
+
+8. Recursion :- Divide big problem into small and simple problems. Find a base condition with simple answer. Return or roll back answer for base condition to solbe all sub problems  
+
