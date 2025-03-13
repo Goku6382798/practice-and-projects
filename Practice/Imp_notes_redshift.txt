@@ -1,0 +1,204 @@
+FOR INFO OF ROLE AND POLICIES OF FEDRATED QUERY please search for Redshift Documentation(official) Database Developer Guide and Querying Data using with fedrated quires
+When the Fedrated quiery does not work or the tables are not appearing in the redshift from RDS
+CHECK for VPC ROUTING is enabled and the redshift cluster is publically accessable and the security group shohuld contain an open port for the redshift and postgress connection in the RDS for POSTGRESS connection
+##NOTE :- for the fedrated query please check the pasword encryption type Below one:
+
+retail_db=> alter user retail_user with password 'Batman123'
+retail_db-> set password_encryption = 'md5';
+ERROR:  syntax error at or near "set"
+LINE 2: set password_encryption = 'md5';
+        ^
+retail_db=> alter user retail_user with password 'Batman123';
+ALTER ROLE
+retail_db=> set password_encryption = 'md5';
+SET
+retail_db=> 
+
+
+
+Fedrated example USE OF REDSHIFT WITH TABLUE WHY AND HOW :-
+To Isolate the traditional the RDS FROM TABLEAU WE CONNECT RDS TO REDSHIFT FOR SECURITY AND HEAVYWEIGHT PROCESSES REASONS
+We ETL the data in redshift
+
+
+SELECT * FROM svv_table_info; for the tables info like distkey info and all
+SELECT * FROM pg_table_def
+WHERE schemaname = 'xyz'
+All table info are kept in pg_catalog named schema
+How to grant permission
+GRANT SELECT ON ALL TABLES IN SCHEMA pg_catalog TO retail_user #in the end user name
+
+The below query will not work as the serch path is set to user public by default we should change it via the parameter where we have to create the custom parameter for this at cluster level and add the xyz or schema name to change the searh path
+SELECT * FROM pg_table_def
+WHERE schemaname = 'xyz'
+
+
+CREATE SCHEMA retail_ods AUTHORIZATION retail_user
+
+CREATE TABLE retail_ods.departments (
+  department_id INT NOT NULL,
+  department_name VARCHAR(45) NOT NULL,
+  PRIMARY_KEY (department_id)
+) DISTSTYLE ALL; ##Small in size
+
+CREATE TABLE retail_ods.categories (
+  category_id INT not NULL,
+  category_department_id INT not NULL,
+  category_name VARCHAR(45) not NULL,
+  PRIMARY_KEY (category_id)
+) DISTSTYLE ALL; ##Small in size
+
+CREATE TABLE retail_ods.products (
+  product_id INT not NULL,
+  product_category_id INT not NULL,
+  product_name VARCHAR(60) not NULL,
+  product_description VARCHAR(255) not NULL,
+  product_price FLOAT not NULL,
+  product_image VARCHAR(255) not NULL,
+  PRIMARY KEY (product_id)
+) DISTSTYLE ALL; ##Small in size
+
+CREATE TABLE retail_ods.customers (
+  customer_id INT not NULL,
+  customer_fname VARCHAR(45) not NULL,
+  customer_lname VARCHAR(45) not NULL,
+  customer_email VARCHAR(45) not NULL,
+  customer_password VARCHAR(45) not NULL,
+  customer_street VARCHAR(255) not NULL,
+  customer_city VARCHAR(45) not NULL,
+  customer_state VARCHAR(45) not NULL,
+  customer_zipcode VARCHAR(45) not NULL,
+  PRIMARY KEY (customer_id)
+) DISTSTYLE AUTO; ##Cause it will grow definely over a period of time
+
+Creating tables with distkeys as they are transactional tables
+CREATE TABLE retail_ods.orders (
+  order_id INT not NULL DISTKEY,
+  order_date TIMESTAMP not NULL,
+  order_customer_id INT not NULL,
+  order_status VARCHAR(45) not NULL,
+  PRIMARY KEY (order_id)
+) DISTSTYLE KEY; ##cause transactional in nature
+
+CREATE TABLE retail_ods.retail_items (
+  order_item_id INT not NULL,
+  order_item_order_id INT not NULL DISTKEY,
+  order_item_product_id INT not NULL,
+  order_item_quantity INT not NULL,
+  order_item_subtotal FLOAT not NULL,
+  order_item_product_price FLOAT not NULL,
+  PRIMARY KEY (order_item_id),
+  FOREIGN KEY (order_item_order_id) REFERENCES orders (order_id)
+);
+
+FOR THE INFO OF DISTKEY of a particular table 
+SELECT * FROM pg_table_def
+WHERE schemaname = 'retail_ods'
+  AND tablename = 'orders';
+  
+FOR THE INFO OF DISTSTYLE of a particular table
+SELECT * FROM svv_table_info
+WHERE "table" = 'orders;'
+
+CREATE TABLE database.schema.myusers (
+  user_id INT PRIMARY KEY,
+  user_first_name VARCHAR(30),
+  user_last_name VARCHAR(30)
+);
+
+-- CRUD Operations - Update records in Redshift table
+ 
+SELECT * FROM myusers
+ 
+UPDATE myusers
+	SET user_first_name = 'Mickey', user_last_name = 'Mouse'
+WHERE user_id = 2
+ 
+SELECT * FROM myusers
+ 
+SELECT lower('Mouse')
+ 
+SELECT * FROM myusers
+ 
+UPDATE myusers
+	SET user_first_name = lower(user_first_name), user_last_name = lower(user_last_name)
+ 
+SELECT * FROM myusers
+ 
+ 
+-- CRUD Operations - Delete records from Retail table
+ 
+SELECT * FROM myusers
+ 
+DELETE FROM myusers
+WHERE user_id = 1
+ 
+SELECT * FROM myusers
+ 
+DELETE FROM myusers
+ 
+TRUNCATE TABLE myusers
+ 
+SELECT * FROM myusers
+
+COPY 
+orders FROM 's3://gdretaildb/retail_db/orders/part-00000'
+CREDENTIALS
+'aws_access_key_id=AKIAWCYYAFMDQ4UZJ2NG;aws_secret_access_key=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'
+DELIMITER ','
+
+COPY 
+orders FROM 's3://gdretaildb/retail_db/orders/part-00000'
+CREDENTIALS
+'aws_access_key_id=AKIAWCYYAFMDQ4UZJ2NG;aws_secret_access_key=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'
+CSV
+
+COPY table-name 
+[ column-list ]
+FROM data_source
+authorization
+[ [ FORMAT ] [ AS ] data_format ] 
+[ parameter [ argument ] [, ... ] ]
+
+
+Another way to copy from s3 is by creating an appropriate role in IAM
+COPY order_items
+FROM 's3://gdretaildb/retail_db/order_items/part-00000'
+IAM_ROLE 'arn:aws:iam::418272783111:role/testingredshift'
+DELIMITER ','	
+
+COPY order_items
+FROM 's3://gdretaildb/retail_db_json/order_items/'
+IAM_ROLE 'arn:aws:iam::418272783111:role/testingredshift'
+JSON AS 'auto'
+
+
+
+Connection from local 
+We need:-
+Host: redshift-cluster-2.clyzf92bkosy.us-east-1.redshift.amazonaws.com
+Port: 5439
+Database: retail_db
+User: retail_user
+Password: Batman123
+
+
+psql -h redshift-cluster-2.clyzf92bkosy.us-east-1.redshift.amazonaws.com \
+ -p 5439 \
+ -d retail_db \
+ -U retail_user \
+ -W
+
+
+ALTER TABLE orders
+owner to retail_user
+ALTER TABLE order_items
+owner to retail_user
+
+
+CREATE EXTERNAL SCHEMA retail_pg
+FROM POSTGRES
+DATABASE 'retail_db' SCHEMA 'public'
+URI 'retail.cnk6igk2exdi.us-east-1.rds.amazonaws.com'
+IAM_ROLE 'arn:aws:iam::418272783111:role/testingredshift'
+SECRET_ARN 'arn:aws:secretsmanager:us-east-1:418272783111:secret:retail.secrets-YTsaIZ'

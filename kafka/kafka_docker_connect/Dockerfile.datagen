@@ -1,0 +1,18 @@
+FROM confluentinc/cp-kafka-connect-base:7.6.0
+
+# Switch to root user to ensure directory creation works
+USER root
+
+ENV CONNECT_PLUGIN_PATH="/usr/share/java,/usr/share/confluent-hub-components,/data/connect-jars"
+
+# Ensure the plugin directory exists
+RUN mkdir -p /data/connect-jars && chown -R appuser:appuser /data/connect-jars
+
+# Install Confluent Hub connector (Fixed plugin name)
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:0.4.0
+
+# Set working directory
+WORKDIR /usr/share/confluent-hub-components
+
+# Switch back to a non-root user (important for security)
+USER appuser
