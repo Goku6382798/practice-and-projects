@@ -1,0 +1,5 @@
+confluent-kafka
+fastavro
+fastapi[all]
+python-dotenv
+Faker
