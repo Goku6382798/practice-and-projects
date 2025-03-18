@@ -1,2 +1,6 @@
-kafka-python==2.0.2
-python-dotenv==0.20.0
+confluent-kafka==2.8.2
+Faker==37.0.0
+fastapi==0.115.8
+fastapi-cli==0.0.7
+fastavro==1.10.0
+python-dotenv==1.0.1
