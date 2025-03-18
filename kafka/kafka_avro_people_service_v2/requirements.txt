@@ -1,5 +1,6 @@
-confluent-kafka
-fastavro
-fastapi[all]
-python-dotenv
-Faker
+confluent-kafka==2.8.2
+Faker==37.0.0
+fastapi==0.115.8
+fastapi-cli==0.0.7
+fastavro==1.10.0
+python-dotenv==1.0.1
