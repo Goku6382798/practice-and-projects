@@ -1,0 +1,33 @@
+plugins {
+    id 'java-library'
+    id 'com.github.davidmc24.gradle.plugin.avro' version '1.9.1'
+}
+
+group = "orders.domain"
+version = "0.2.0"
+
+base {
+    archivesName = rootProject.name
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.apache.avro:avro:1.11.0"
+    testImplementation 'junit:junit:4.13.2'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+avro {
+    stringType = "String"
+    fieldVisibility = "PRIVATE"
+    createSetters = true
+    enableDecimalLogicalType = true
+}

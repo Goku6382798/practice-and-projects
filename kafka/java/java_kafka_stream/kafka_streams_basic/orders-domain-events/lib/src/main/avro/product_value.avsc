@@ -1,0 +1,19 @@
+{
+    "namespace": "orders.domain.events",
+    "name": "Product",
+    "type": "record",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "price",
+            "type": "int"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "namespace": "order.domain.events",
+    "name": "CustomerRevenue",
+    "type": "record",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "revenue",
+            "type": "int"
+        }
+    ]
+}

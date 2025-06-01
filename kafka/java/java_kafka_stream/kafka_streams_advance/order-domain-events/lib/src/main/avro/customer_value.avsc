@@ -1,0 +1,15 @@
+{
+    "namespace": "order.domain.events",
+    "name": "Customer",
+    "type": "record",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ]
+}
