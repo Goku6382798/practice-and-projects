@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serve</title>
+</head>
+<body>
+    <div>
+        {% for data in userdata %}
+            <h1>{{data.username}}</h1>
+            <img src="{{data.file.url}}" alt="" width="200" height="200">
+            {{data.file.path}}
+            {{data.file.size}}
+        {% endfor %}
+    </div>
+</body>
+</html>

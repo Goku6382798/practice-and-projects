@@ -1,0 +1,19 @@
+<div class="col-sm-6 mb-3">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="image-container">
+                                <img src="{{post.post_image.url}}" class="img-fluid rounded-start" alt="{{ post.title }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">{{ post.post_title|title }}</h5>
+                                <p class="card-text fw-normal">{{ post.post_content|truncatewords:25 }}</p>
+                                <a href="{% url 'post' post.id %}" class="btn btn-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>No posts yet.</p>

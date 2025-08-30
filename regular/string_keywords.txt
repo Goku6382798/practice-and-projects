@@ -1,0 +1,47 @@
+
+📘 Important Keywords in Strings and DSA
+
+1. Anagram:
+   - Two strings are anagrams if they contain the same characters with the same frequency, but possibly in different order.
+   - Example: "listen" and "silent".
+
+2. Palindrome:
+   - A string that reads the same forward and backward.
+   - Example: "madam", "racecar".
+
+3. Substring:
+   - A contiguous sequence of characters within a string.
+   - Example: Substrings of "abc" → "a", "ab", "abc", "b", "bc", "c".
+
+4. Subsequence:
+   - A sequence derived by deleting zero or more characters without changing the order of the remaining characters.
+   - Example: Subsequences of "abc" → "a", "b", "c", "ab", "ac", "bc", "abc".
+
+5. Permutation:
+   - An arrangement of all elements of a set/string in every possible order.
+   - Example: Permutations of "abc" → "abc", "acb", "bac", "bca", "cab", "cba".
+
+6. Combination:
+   - A selection of items without caring about order.
+   - Example: Combinations of "abc" taking 2 → "ab", "ac", "bc".
+
+7. Prefix:
+   - A substring that occurs at the beginning of a string.
+   - Example: Prefixes of "abc" → "a", "ab", "abc".
+
+8. Suffix:
+   - A substring that occurs at the end of a string.
+   - Example: Suffixes of "abc" → "c", "bc", "abc".
+
+9. Isomorphic Strings:
+   - Two strings are isomorphic if characters in one can be replaced to get the other, with one-to-one mapping.
+   - Example: "egg" and "add" → e→a, g→d.
+
+10. Pangram:
+    - A sentence that contains every letter of the alphabet at least once.
+    - Example: "The quick brown fox jumps over the lazy dog".
+
+11. Hamming Distance:
+    - The number of positions at which corresponding characters are different.
+    - Example: Hamming distance between "karolin" and "kathrin" = 3.
+

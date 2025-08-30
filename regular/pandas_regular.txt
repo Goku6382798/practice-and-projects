@@ -1,0 +1,96 @@
+
+# Pandas Preparation Guide - Regular Study
+
+## 1. Introduction to Pandas
+- What is Pandas? → A Python library for data manipulation and analysis.
+- Core Data Structures:
+  - **Series**: 1D labeled array
+  - **DataFrame**: 2D labeled table
+
+## 2. Basics of Series
+- Creating Series from lists, arrays, dicts
+- Indexing and slicing
+- Attributes: index, values, dtype, shape
+- Methods: head(), tail(), describe()
+
+## 3. Basics of DataFrame
+- Creating DataFrames (from dict, list of dicts, CSV, Excel, JSON)
+- Viewing Data: head(), tail(), info(), describe(), shape, dtypes
+- Selecting Columns: df['col'], df.col, df[['col1','col2']]
+- Selecting Rows: loc[], iloc[]
+
+## 4. Data Selection and Indexing
+- loc[] → label-based selection
+- iloc[] → integer position selection
+- at[], iat[] for fast scalar access
+- Conditional selection: df[df['col'] > value]
+- isin(), between()
+
+## 5. Data Cleaning & Preparation
+- Handling Missing Data: isna(), fillna(), dropna()
+- Replacing values: replace()
+- Renaming columns/index: rename()
+- Changing data types: astype()
+- Duplicates: duplicated(), drop_duplicates()
+- String operations: str.lower(), str.contains(), str.strip()
+
+## 6. Data Manipulation
+- Adding / Dropping columns: df['new'], drop()
+- Sorting: sort_values(), sort_index()
+- Applying functions: apply(), map(), applymap()
+- Lambda functions with apply
+- Vectorized operations
+
+## 7. Grouping and Aggregation
+- groupby() basics
+- Aggregations: sum(), mean(), count(), min(), max(), agg()
+- Multiple aggregations per column
+- Pivot tables: pivot_table()
+- Crosstab
+
+## 8. Merging, Joining, Concatenating
+- concat() for stacking DataFrames (row/column wise)
+- merge() for SQL-style joins (inner, outer, left, right)
+- join() for index-based joins
+
+## 9. Advanced Indexing
+- MultiIndex (hierarchical indexing)
+- Setting/Resetting index
+- Reindexing
+
+## 10. Time Series in Pandas
+- to_datetime() conversion
+- DateRange creation
+- Resampling and frequency conversion
+- Shifting and lagging data
+- Rolling windows (rolling().mean())
+
+## 11. Input/Output (File Handling)
+- CSV: read_csv(), to_csv()
+- Excel: read_excel(), to_excel()
+- JSON: read_json(), to_json()
+- SQL: read_sql(), to_sql()
+- Parquet/HDF: read_parquet(), to_parquet()
+
+## 12. Performance Optimization
+- Vectorization vs loops
+- Memory usage: memory_usage(), optimize dtypes
+- Using categorical data
+- Chunking large files with read_csv(chunksize=)
+
+## 13. Visualization (with Pandas built-in)
+- plot() function (line, bar, histogram, scatter)
+- Integration with Matplotlib/Seaborn
+
+## 14. Advanced Topics
+- Window Functions: expanding(), rolling(), ewm()
+- Handling large datasets with Dask (Pandas-like API)
+- Pandas with SQLAlchemy for database operations
+
+---
+
+# Preparation Strategy
+- Daily mix: 1 data cleaning exercise + 1 groupby/merge query.
+- Practice by exploring datasets (Kaggle, UCI).
+- Focus on loc/iloc, groupby, merges → most asked in interviews.
+- Work on small projects: CSV/JSON ETL, data summaries, reporting dashboards.

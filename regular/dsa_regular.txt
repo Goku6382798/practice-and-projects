@@ -1,0 +1,219 @@
+📘 DSA Theory (Core Concepts)
+1. Asymptotic Analysis
+
+This is how we measure the efficiency of algorithms:
+
+Big O (O) → Upper bound / worst case.
+Example: Linear search → O(n).
+
+Big Ω (Ω) → Lower bound / best case.
+Example: Linear search best case (first element) → Ω(1).
+
+Big Θ (Θ) → Tight bound / average case.
+Example: Linear search average → Θ(n).
+
+👉 Always focus on Big O in interviews (worst case).
+
+2. Common Time Complexities
+
+O(1) – Constant → Array index access, hash lookup.
+
+O(log n) – Logarithmic → Binary search, balanced BST lookup.
+
+O(n) – Linear → Traversing an array or list.
+
+O(n log n) – Log-linear → Merge sort, Quick sort (average).
+
+O(n²) – Quadratic → Bubble sort, nested loops.
+
+O(2ⁿ) – Exponential → Recursive Fibonacci (without DP).
+
+O(n!) – Factorial → Travelling Salesman brute force.
+
+👉 Rule of thumb:
+
+n ~ 10⁶ → O(n log n) is OK.
+
+n ~ 10⁴ → O(n²) might still pass.
+
+n ~ 20–30 → O(2ⁿ) acceptable for recursion/backtracking.
+
+3. Space Complexity
+
+Measures extra memory required.
+
+Includes:
+
+Variables
+
+Input storage
+
+Auxiliary structures (stacks, hash tables, recursion stack)
+
+4. Recursion Basics
+
+A function that calls itself until a base condition.
+
+Uses the call stack → each call stores parameters + return address.
+
+Can cause stack overflow if base case is missing.
+
+👉 Tip: Convert recursion to iteration when possible for efficiency (tail recursion).
+
+5. Algorithm Design Paradigms
+
+Divide & Conquer – Break into subproblems (Merge Sort, Quick Sort, Binary Search).
+
+Greedy – Make local optimal choices (Activity Selection, Huffman Coding).
+
+Dynamic Programming – Store subproblem results to avoid recomputation.
+
+Backtracking – Try all possibilities, prune invalid ones (N-Queens, Sudoku).
+
+6. Data Structure Trade-offs
+
+Array vs Linked List:
+
+Array = O(1) access, but O(n) insertion.
+
+Linked List = O(1) insertion, O(n) access.
+
+Stack vs Queue:
+
+Stack = LIFO.
+
+Queue = FIFO.
+
+Hash Table:
+
+O(1) average for search/insert, but O(n) worst case (collisions).
+
+Trees/Heaps:
+
+Balanced BST = O(log n) insert/search.
+
+Heap = O(log n) insert, O(1) get min/max.
+
+✨ With this theory part + DSA topic list, you now have a complete foundation file:
+
+Intro theory (Big O, recursion, paradigms, trade-offs)
+
+Topic list (arrays, strings, graphs, DP, etc.)
+
+Preparation strategy
+
+
+# Data Structures and Algorithms (DSA) - Regular Preparation Guide
+
+## 1. Basics of DSA
+- Time Complexity (Big O, Big Theta, Big Omega)
+- Space Complexity
+- Recursion (definition, stack behavior, base & recursive cases)
+
+## 2. Arrays
+- Traversal, Insertion, Deletion
+- Searching (Linear Search, Binary Search)
+- Sorting (Bubble, Selection, Insertion, Merge, Quick, Heap, Counting, Radix)
+- Prefix Sum, Kadane’s Algorithm (Maximum Subarray)
+- Sliding Window Technique
+- Two Pointers Technique
+
+## 3. Strings
+- Basics (substrings, subsequences, anagrams)
+- String Searching (Naive, KMP, Rabin-Karp)
+- Palindrome Problems
+- Pattern Matching
+- String Hashing (Rolling Hash)
+
+## 4. Linked Lists
+- Singly Linked List (Insertion, Deletion, Traversal)
+- Doubly Linked List
+- Circular Linked List
+- Reverse a Linked List
+- Detect and Remove Cycle (Floyd’s Tortoise and Hare)
+- Merge Two Sorted Linked Lists
+
+## 5. Stacks and Queues
+- Stack (Array / Linked List Implementation)
+- Queue (Array / Linked List Implementation)
+- Circular Queue
+- Deque (Double-Ended Queue)
+- Applications:
+  - Balanced Parentheses
+  - Next Greater Element
+  - Infix → Postfix conversion and evaluation
+
+## 6. Hashing
+- Hash Tables, Hash Functions
+- Collision Handling (Chaining, Open Addressing)
+- Sets and Maps (Implementation using hashing)
+- Applications:
+  - Two Sum Problem
+  - Subarray Sum Problems
+
+## 7. Trees
+- Binary Tree (Traversal: Inorder, Preorder, Postorder, Level Order)
+- Binary Search Tree (BST operations)
+- Lowest Common Ancestor (LCA)
+- Height, Diameter of Tree
+- Balanced Trees (AVL, Red-Black – theory only for interviews)
+- Trie (Prefix Tree)
+
+## 8. Heaps / Priority Queues
+- Min-Heap, Max-Heap (array representation)
+- Heap Operations (insert, extract-min/max)
+- Heap Sort
+- Applications: Kth largest/smallest, Median of Stream
+
+## 9. Graphs
+- Representations (Adjacency Matrix, Adjacency List)
+- Traversals: BFS, DFS
+- Shortest Paths: Dijkstra, Bellman-Ford, Floyd-Warshall
+- Minimum Spanning Tree: Prim’s, Kruskal’s
+- Topological Sort
+- Detect Cycles in Graphs (Directed & Undirected)
+- Connected Components, Bipartite Graph Check
+
+## 10. Dynamic Programming (DP)
+- Basics: Overlapping Subproblems, Optimal Substructure
+- Memoization vs Tabulation
+- Classic Problems:
+  - Fibonacci, Climbing Stairs
+  - Knapsack (0/1, Unbounded)
+  - Longest Common Subsequence (LCS)
+  - Longest Increasing Subsequence (LIS)
+  - Matrix Chain Multiplication
+  - Coin Change
+  - Subset Sum
+  - Edit Distance
+
+## 11. Greedy Algorithms
+- Activity Selection
+- Huffman Coding
+- Minimum Spanning Tree (Prim’s, Kruskal’s)
+- Job Scheduling
+
+## 12. Advanced Topics
+- Segment Tree / Fenwick Tree (Binary Indexed Tree)
+- Disjoint Set Union (Union-Find, Path Compression)
+- Backtracking:
+  - N-Queens
+  - Sudoku Solver
+  - Rat in a Maze
+- Bit Manipulation Tricks
+
+## 13. Miscellaneous
+- Divide and Conquer
+- Binary Search on Answer
+- Monotonic Stack / Queue
+- Sliding Window Maximum
+- Reservoir Sampling
+- Randomized Algorithms (Quickselect)
+
+---
+
+# Preparation Strategy
+- Daily mix: 1–2 coding problems (LeetCode/HackerRank) + review theory of one topic.
+- Revise time/space complexities regularly.
+- Focus on patterns: sliding window, two pointers, recursion → DP.
+

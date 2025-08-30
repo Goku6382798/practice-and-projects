@@ -1,0 +1,24 @@
+🔹 Core Hadoop & HDFS
+- How does HDFS store large files?
+- What happens if a NameNode fails?
+- Why is HDFS not suitable for small files?
+- How does Hadoop ensure data reliability?
+
+🔹 MapReduce
+- Explain the lifecycle of a MapReduce job.
+- Role of a Combiner? When not useful?
+- Optimize MapReduce to reduce network I/O?
+
+🔹 Performance & Optimization
+- Debugging slow Hadoop job?
+- Counters, logs, speculative execution, skewed keys.
+- Handling data skew?
+- Memory/parallel tuning? Params?
+
+🔹 Ecosystem Tools
+- How Hive interacts with HDFS?
+- Hive Metastore, lazy loading, partitioning.
+- Internal vs External tables.
+- Partitioning vs bucketing in Hive?
+- What is a SerDe?
+- Compare Hadoop with Spark.

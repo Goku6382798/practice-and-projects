@@ -1,0 +1,160 @@
+📘 Data Structures and Algorithms (DSA) - Theory Summary
+
+1. Complexity Analysis
+
+-   Big O (O): Upper bound, worst-case performance.
+-   Big Ω (Ω): Lower bound, best-case performance.
+-   Big Θ (Θ): Tight bound, average case.
+-   Common complexities: O(1), O(log n), O(n), O(n log n), O(n²),
+    O(2^n), O(n!).
+-   Space Complexity: Measures extra memory used (variables, recursion
+    stack).
+
+------------------------------------------------------------------------
+
+2. Recursion
+
+-   A function calling itself until base case.
+-   Uses system call stack.
+-   Risk: stack overflow if base case missing.
+-   Can be converted to iteration.
+
+------------------------------------------------------------------------
+
+3. Arrays
+
+-   Fixed-size, contiguous memory.
+-   Access: O(1).
+-   Insert/Delete: O(n).
+-   Algorithms: Traversal, Binary Search, Sorting (Bubble, Merge, Quick,
+    Heap).
+-   Techniques: Sliding Window, Prefix Sum, Two Pointers.
+
+------------------------------------------------------------------------
+
+4. Strings
+
+-   Sequence of characters.
+-   Problems: Palindrome, Anagrams, Pattern Matching (KMP, Rabin-Karp).
+-   String Hashing, Rolling Hash.
+
+------------------------------------------------------------------------
+
+5. Linked Lists
+
+-   Singly: Node(val, next).
+-   Doubly: Node(val, prev, next).
+-   Circular: Last node points to first.
+-   Operations: Insert, Delete, Reverse, Detect cycle.
+
+------------------------------------------------------------------------
+
+6. Stacks & Queues
+
+-   Stack (LIFO): push, pop, peek. (Apps: Expression eval, Undo, DFS).
+-   Queue (FIFO): enqueue, dequeue. (Apps: Scheduling, BFS).
+-   Deque: double-ended queue.
+
+------------------------------------------------------------------------
+
+7. Hashing
+
+-   Hash table: average O(1) insert/search.
+-   Collision handling: Chaining, Open Addressing.
+-   Applications: Sets, Maps, Two Sum, Subarray problems.
+
+------------------------------------------------------------------------
+
+8. Trees
+
+-   Hierarchical structure (root, children).
+-   Binary Tree: each node ≤ 2 children.
+-   Traversals:
+    -   Inorder (LNR)
+    -   Preorder (NLR)
+    -   Postorder (LRN)
+    -   Level-order (BFS)
+-   Problems: Height, Diameter, LCA, Views (Left, Right, Top, Bottom),
+    Balanced Tree, Mirror Tree.
+
+------------------------------------------------------------------------
+
+9. Binary Search Trees (BST)
+
+-   Left < Root < Right property.
+-   Inorder traversal → sorted sequence.
+-   Operations: Insert, Search, Delete.
+
+------------------------------------------------------------------------
+
+10. Heaps / Priority Queues
+
+-   Min-Heap: parent ≤ children.
+-   Max-Heap: parent ≥ children.
+-   Operations: insert O(log n), extract-min/max O(log n).
+-   Apps: Heap Sort, Kth largest element, Median of stream.
+
+------------------------------------------------------------------------
+
+11. Graphs
+
+-   Representations: Adjacency List, Adjacency Matrix.
+-   Traversals: BFS, DFS.
+-   Shortest Path: Dijkstra, Bellman-Ford, Floyd-Warshall.
+-   MST: Prim’s, Kruskal’s.
+-   Topological Sort, Cycle Detection, Connected Components, Bipartite
+    Check.
+
+------------------------------------------------------------------------
+
+12. Greedy Algorithms
+
+-   Local optimal → global optimal.
+-   Examples: Activity Selection, Huffman Coding, MST.
+
+------------------------------------------------------------------------
+
+13. Dynamic Programming (DP)
+
+-   Overlapping subproblems + Optimal substructure.
+-   Memoization (top-down), Tabulation (bottom-up).
+-   Problems:
+    -   Fibonacci, Climbing Stairs
+    -   Knapsack (0/1, Unbounded)
+    -   LCS, LIS
+    -   Matrix Chain Multiplication
+    -   Coin Change, Subset Sum, Edit Distance
+
+------------------------------------------------------------------------
+
+14. Advanced Data Structures
+
+-   Segment Tree: Range queries, updates in O(log n).
+-   Fenwick Tree (BIT): Prefix sums in O(log n).
+-   Disjoint Set Union (DSU): Union-Find with path compression.
+
+------------------------------------------------------------------------
+
+15. Backtracking
+
+-   Try all possibilities, backtrack on failure.
+-   Problems: N-Queens, Sudoku Solver, Rat in a Maze.
+
+------------------------------------------------------------------------
+
+16. Bit Manipulation
+
+-   Operations: AND, OR, XOR, shifts.
+-   Tricks: check odd/even, power of 2, subsets generation.
+
+------------------------------------------------------------------------
+
+Summary
+
+-   Arrays/Strings: Basic building blocks.
+-   Linked List/Stacks/Queues: Dynamic memory & order-based structures.
+-   Hashing: Fast lookups.
+-   Trees/Heaps: Hierarchical & priority-based structures.
+-   Graphs: Relationships & networks.
+-   DP/Greedy: Algorithm paradigms for optimization.
+-   Advanced (Segment Tree, DSU): Competitive programming use.

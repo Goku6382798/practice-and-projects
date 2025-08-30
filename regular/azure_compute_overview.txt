@@ -1,0 +1,26 @@
+✔️ IaaS:
+- Azure VMs: D, E, F, N series
+- VM Scale Sets
+
+✔️ PaaS:
+- App Service
+- Azure Kubernetes Service (AKS)
+
+✔️ Serverless:
+- Azure Functions
+- Azure Container Apps
+
+✔️ Specialized Compute:
+- Azure Batch
+- Confidential Computing
+
+✔️ Key Engineering Features:
+- Proximity Placement Groups
+- Availability Zones
+- Auto-scaling, Load Balancing
+- Hybrid Compute with Azure Arc
+
+✔️ Why Azure Compute Matters:
+- Optimize layers: VM, container, serverless
+- Resilience: Zone, scale sets
+- Performance/Cost: Spot VMs, Ephemeral OS, SSDs

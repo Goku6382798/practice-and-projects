@@ -1,0 +1,14 @@
+1. Password Security – https://lnkd.in/edd8-N5k
+2. Scaling AWS – https://lnkd.in/eU736g9Q
+3. Redis Use Cases – https://lnkd.in/ekJMjMG3
+4. Protobuf vs JSON – https://lnkd.in/egcFxe2t
+5. Actor Model – https://lnkd.in/eqcb7MpP
+6. Consistent Hashing – https://lnkd.in/eUP9DbCg
+7. Service Discovery – https://lnkd.in/eCYYwQfU
+8. Bloom Filters – https://lnkd.in/e2duES7s
+9. Netflix Microservices – https://lnkd.in/eZSM3CRB
+10. What Happens in URL – https://lnkd.in/eusuDn5z
+11. Back of Envelope – https://lnkd.in/ev358pj3
+12. Modular Monolith – https://lnkd.in/edUqkCKR
+13. Saga Pattern – https://lnkd.in/eFXC4-aJ
+14. Idempotent API – https://lnkd.in/erMkqwq4

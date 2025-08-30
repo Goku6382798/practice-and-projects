@@ -1,0 +1,102 @@
+
+# Python Preparation Guide - Regular Study
+
+## 1. Basics of Python
+- Introduction to Python, Interpreter, and IDEs
+- Variables and Data Types (int, float, str, bool, complex)
+- Type Casting
+- Input/Output Functions (input(), print())
+
+## 2. Operators
+- Arithmetic Operators (+, -, *, /, %, //, **)
+- Comparison Operators (==, !=, >, <, >=, <=)
+- Logical Operators (and, or, not)
+- Bitwise Operators (&, |, ^, ~, <<, >>)
+- Identity Operators (is, is not)
+- Membership Operators (in, not in)
+
+## 3. Control Flow
+- if, if-else, if-elif-else
+- Loops: for, while
+- break, continue, pass
+- Loop else clause
+
+## 4. Data Structures
+- Strings (slicing, methods)
+- Lists (methods, list comprehension, nested lists)
+- Tuples (immutability, methods)
+- Sets (operations: union, intersection, difference)
+- Dictionaries (key-value pairs, methods)
+- Collections Module: Counter, defaultdict, deque, OrderedDict
+
+## 5. Functions
+- Defining and Calling Functions
+- Arguments: positional, keyword, default, variable-length (*args, **kwargs)
+- Return values
+- Lambda Functions
+- Map, Filter, Reduce
+- Recursion
+
+## 6. Modules and Packages
+- Importing modules (import, from-import)
+- Standard libraries (math, random, datetime, os, sys)
+- Creating and using custom modules
+- Virtual environments (venv, pip)
+
+## 7. File Handling
+- Opening files (open() with modes: r, w, a, b, x)
+- Reading and Writing (read(), readline(), readlines(), write(), writelines())
+- File pointer methods (seek(), tell())
+- With statement (context manager)
+- Handling CSV files (csv module, pandas)
+- Handling JSON files (json module)
+
+## 8. Exception Handling
+- try, except, finally
+- Multiple except blocks
+- else with try-except
+- Raising exceptions (raise)
+- Custom exceptions (class MyError(Exception))
+
+## 9. Object-Oriented Programming (OOP)
+- Classes and Objects
+- Constructors (__init__)
+- Methods (instance, class, static)
+- Encapsulation (public, protected, private)
+- Inheritance (single, multiple, multilevel, hierarchical)
+- Polymorphism (method overriding, operator overloading)
+- Abstraction (abc module, abstract classes)
+- Dunder (magic) methods (__str__, __len__, __add__, etc.)
+
+## 10. Iterators and Generators
+- __iter__ and __next__
+- Creating custom iterators
+- yield and generator functions
+- Generator expressions
+
+## 11. Advanced Topics
+- Decorators (function decorators, class decorators)
+- Context Managers (with statement, __enter__, __exit__)
+- Closures
+- Regular Expressions (re module)
+- Logging (logging module)
+- Multithreading and Multiprocessing
+- AsyncIO (async/await)
+
+## 12. Data Handling and Libraries
+- NumPy basics (arrays, slicing, broadcasting)
+- Pandas basics (DataFrames, Series, indexing, operations)
+- Matplotlib/Seaborn basics (visualization)
+
+## 13. Testing and Best Practices
+- Unit Testing (unittest, pytest basics)
+- Docstrings and Comments
+- PEP8 coding standards
+
+---
+
+# Preparation Strategy
+- Practice small scripts daily (basic → OOP → file handling).
+- Work on coding challenges (LeetCode Easy/Medium in Python).
+- Implement real mini-projects (file parsers, API calls, CSV/JSON handlers).
+- Revise exception handling and OOP frequently (important in interviews).

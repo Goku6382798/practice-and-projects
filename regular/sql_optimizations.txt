@@ -1,0 +1,14 @@
+✴ Avoid SELECT *:
+✅ SELECT only needed columns
+
+✴ Use Proper Joins:
+✅ Use explicit INNER JOIN
+
+✴ Use Indexes Wisely:
+✅ Create indexes on filtered columns
+
+✴ Avoid Nested Queries:
+✅ Use JOINs over subqueries
+
+✴ Minimize Data Transfer:
+✅ Only fetch required columns

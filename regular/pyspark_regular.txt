@@ -1,0 +1,88 @@
+
+# PySpark Preparation Guide - Regular Study
+
+## 1. Introduction to PySpark
+- What is Spark? → Distributed data processing engine.
+- What is PySpark? → Python API for Apache Spark.
+- Components: Spark Core, Spark SQL, Spark Streaming, MLlib, GraphX.
+
+## 2. PySpark Basics
+- Initializing SparkSession
+- SparkContext vs SparkSession
+- RDD (Resilient Distributed Dataset)
+  - Creation: parallelize(), textFile()
+  - Transformations: map(), flatMap(), filter(), distinct()
+  - Actions: collect(), count(), reduce(), first(), take()
+  - Persistence: cache(), persist()
+
+## 3. DataFrames
+- Creating DataFrames (from RDD, list, dict, CSV, JSON, Parquet, JDBC)
+- Schema definition (inferSchema, StructType, StructField)
+- Viewing Data: show(), printSchema(), columns, dtypes
+
+## 4. DataFrame Operations
+- Selecting Columns: select(), withColumn(), drop()
+- Filtering Rows: filter(), where()
+- Sorting: orderBy()
+- Distinct, dropDuplicates()
+- Sampling: sample()
+- Column Expressions: expr(), col(), lit()
+
+## 5. Data Cleaning & Transformation
+- Handling Missing Data: fillna(), dropna(), replace()
+- Casting Columns: cast()
+- String Operations: contains(), substr(), lower(), upper()
+- Date/Time Operations: to_date(), date_format(), current_date()
+
+## 6. Aggregations & Grouping
+- groupBy() and agg()
+- Aggregation Functions: sum(), avg(), count(), min(), max()
+- Multiple Aggregations per column
+- Window Functions: row_number(), rank(), dense_rank(), lead(), lag()
+
+## 7. Joins in PySpark
+- Inner Join, Left/Right Outer Join, Full Outer Join
+- Semi Join, Anti Join
+- Cross Join
+- Handling join conditions with multiple keys
+
+## 8. Spark SQL
+- Creating Temporary Views: createOrReplaceTempView()
+- Running SQL Queries: spark.sql("...")
+- Integration of SQL and DataFrame API
+
+## 9. Performance Optimization
+- Lazy Evaluation (transformations vs actions)
+- Partitioning and Coalescing: repartition(), coalesce()
+- Caching and Persistence
+- Catalyst Optimizer (query optimization)
+- Tungsten Engine (memory management)
+- Broadcast Variables & Accumulators
+- Broadcast Join (efficient join with small table)
+
+## 10. File Formats & Data Sources
+- Reading/Writing: CSV, JSON, Parquet, ORC, Avro
+- JDBC integration (Postgres, MySQL, etc.)
+- Delta Lake basics (if available)
+
+## 11. Advanced Topics
+- UDF (User Defined Functions)
+- Pandas UDF (Vectorized UDFs)
+- Spark Streaming Basics (DStreams, Structured Streaming)
+- Checkpointing and Fault Tolerance
+- Integration with Hive Metastore
+
+## 12. Machine Learning with PySpark (MLlib)
+- MLlib basics
+- Pipelines (Transformers and Estimators)
+- Feature Engineering (VectorAssembler, StringIndexer)
+- Algorithms: Logistic Regression, Decision Trees, Random Forest
+
+---
+
+# Preparation Strategy
+- Daily mix: 1 DataFrame operation + 1 SQL query on Spark + 1 join/groupBy exercise.
+- Work with small datasets locally, then try big ones (Kaggle, public datasets).
+- Focus on DataFrames, Joins, Aggregations → most asked in interviews.
+- Revise partitioning, caching, and broadcast joins for performance tuning questions.
+- Build a mini-project: ETL pipeline with PySpark (CSV → transform → Parquet).

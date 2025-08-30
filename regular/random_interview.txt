@@ -1,0 +1,185 @@
+I am 𝗵𝗶𝗿𝗶𝗻𝗴 you as a 𝗗𝗮𝘁𝗮 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿 if you can answer these 30 questions:
+
+𝗦𝗤𝗟
+- How would you write a query to calculate a cumulative sum or running total within a specific partition in SQL?
+- How do window functions differ from aggregate functions, and when would you use them?
+- How do you identify and remove duplicate records in SQL without using temporary tables?
+
+𝗣𝘆𝘁𝗵𝗼𝗻
+- How do you manage memory efficiently when processing large files in Python?
+- What are Python decorators, and how would you use them to optimize reusable code in ETL processes?
+- How do you use Python’s built-in logging module to capture detailed error and audit logs?
+
+𝗣𝘆𝘀𝗽𝗮𝗿𝗸
+- How would you handle skewed data in a Spark job to prevent performance issues?
+- What is the difference between the Spark Session and Spark Context? When should each be used?
+- How do you handle backpressure in Spark Streaming applications to manage load effectively?
+
+𝗔𝘇𝘂𝗿𝗲 𝗗𝗮𝘁𝗮𝗯𝗿𝗶𝗰𝗸𝘀
+- How do you configure cluster autoscaling in Databricks, and when should it be used?
+- How do you implement data versioning in Delta Lake tables within Databricks?
+- How would you monitor and optimize Databricks job performance metrics?
+
+𝗔𝘇𝘂𝗿𝗲 𝗗𝗮𝘁𝗮 𝗙𝗮𝗰𝘁𝗼𝗿𝘆
+- What are tumbling window triggers in Azure Data Factory, and how do you configure them?
+- How would you enable managed identity-based authentication for linked services in ADF?
+- How do you create custom activity logs in ADF for monitoring data pipeline execution?
+
+𝗖𝗜/𝗖𝗗
+- What are blue-green deployments, and how would you use them for ETL jobs?
+- How do you implement rollback mechanisms in CI/CD pipelines for data integration processes?
+- What strategies do you use to handle schema evolution in data pipelines as part of CI/CD?
+
+𝗗𝗮𝘁𝗮 𝗪𝗮𝗿𝗲𝗵𝗼𝘂𝘀𝗶𝗻𝗴
+- How do you optimize join operations in a data warehouse to improve query performance?
+- What is a slowly changing dimension (SCD), and what are different ways to implement it in a data warehouse?
+- How do surrogate keys benefit data warehouse design over natural keys?
+
+𝗗𝗮𝘁𝗮 𝗠𝗼𝗱𝗲𝗹𝗶𝗻𝗴
+- How do you decide between a star schema and a snowflake schema for a data warehouse? Provide examples of scenarios where each is ideal.
+- What is dimensional modeling, and how does it differ from entity-relationship modeling in terms of use cases?
+- How do you handle one-to-many relationships in a dimensional model to ensure efficient querying?
+
+If you are preparing for Data Engineering interviews then you should check my personally crafted Interview Experiences for 100+ Companies
+
+
+𝗗𝗲𝗹𝗼𝗶𝘁𝘁𝗲 asked these SQL questions in a Data Engineering interview (𝟯+ 𝗬𝗢𝗘)
+CTC → 𝟯𝟬–𝟰𝟬 𝗟𝗣𝗔 (Difficulty level = Advanced)
+
+1.⁠ ⁠Calculate daily user retention for a 30-day cohort window.
+2.⁠ ⁠Retrieve the latest 3 events per user using window functions.
+3.⁠ ⁠Detect out-of-order events in time-series logs using timestamps.
+4.⁠ ⁠Backfill missing dates in a partitioned dataset using calendar table.
+5.⁠ ⁠Compute rolling 7-day distinct active users per platform.
+6.⁠ ⁠Identify users with no activity in the last 30 days (churn analysis).
+7.⁠ ⁠Perform multi-level aggregation (category → subcategory → product).
+8.⁠ ⁠Compare current vs previous month revenue per region.
+9.⁠ ⁠Join fact and dimension tables with SCD Type 2 handling.
+10.⁠ ⁠Detect schema drift between raw and curated layers via metadata.
+11.⁠ ⁠Calculate 95th percentile of transaction amounts by user.
+12.⁠ ⁠Fetch top 3 categories contributing to 80% of total revenue.
+13.⁠ ⁠Identify seasonal patterns in monthly product sales.
+14.⁠ ⁠Use broadcast join hints to optimize small dimension lookups.
+15.⁠ ⁠Flag revenue anomalies using z-score or standard deviation.
+16.⁠ ⁠Remove duplicates using ROW_NUMBER on ingestion timestamp.
+17.⁠ ⁠Calculate session time from login-logout events.
+18.⁠ ⁠Compare revenue growth across last 3 quarters per product line.
+19.⁠ ⁠Identify users who upgraded to premium but never used the features.
+20.⁠ ⁠Track update frequency on records in an SCD Type 2 table.
+
+If you’re preparing for a Data Engineering role at companies like Deloitte, Amazon, TCS, or Snowflake, then I’d suggest checking Bosscoder Academy.
+
+👉🏻 Check them here: https://bit.ly/44Av3bY
+
+𝐇𝐨𝐰 𝐭𝐨 𝐜𝐡𝐨𝐨𝐬𝐞 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 𝐩𝐫𝐨𝐣𝐞𝐜𝐭𝐬 
+
+
+Choosing the right database for your application is a crucial decision that can significantly impact the performance, scalability, and maintenance of your software. There are various factors to consider when selecting a database system.
+
+Here are steps to help you choose the appropriate database:
+
+𝗨𝗻𝗱𝗲𝗿𝘀𝘁𝗮𝗻𝗱 𝗬𝗼𝘂𝗿 𝗗𝗮𝘁𝗮 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗺𝗲𝗻𝘁𝘀
+
+ Analyze the nature of your data, including its structure, volume, and complexity.
+ Determine if your data is structured (relational), semistructured (like JSON or XML), or unstructured (e.g., text, images).
+ Consider the growth rate of your data and whether it's transactional or analytical.
+
+𝗜𝗱𝗲𝗻𝘁𝗶𝗳𝘆 𝗬𝗼𝘂𝗿 𝗨𝘀𝗲 𝗖𝗮𝘀𝗲𝘀:
+
+ Define the specific use cases your application will have, such as read heavy, write heavy, complex queries, realtime analytics, or simple CRUD operations.
+
+𝗦𝗰𝗮𝗹𝗮𝗯𝗶𝗹𝗶𝘁𝘆 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗺𝗲𝗻𝘁𝘀:
+
+ Determine if your application needs to scale horizontally (adding more servers) or vertically (upgrading server resources).
+ Look at the database's ability to handle increased loads and traffic.
+
+𝗗𝗮𝘁𝗮 𝗖𝗼𝗻𝘀𝗶𝘀𝘁𝗲𝗻𝗰𝘆:
+
+ Decide whether your application requires strict ACID (Atomicity, Consistency, Isolation, Durability) compliance or if eventual consistency is acceptable.
+
+𝗤𝘂𝗲𝗿𝘆 𝗖𝗼𝗺𝗽𝗹𝗲𝘅𝗶𝘁𝘆:
+
+ Consider the types of queries your application will run and whether the database can efficiently handle them.
+ Evaluate the indexing and querying capabilities.
+
+𝐃𝐚𝐭𝐚 𝐌𝐨𝐝𝐞𝐥:
+
+ Choose between relational databases (SQL) and NoSQL databases based on your data structure and query requirements.
+ 
+𝗖𝗼𝗺𝗽𝗮𝘁𝗶𝗯𝗶𝗹𝗶𝘁𝘆 𝘄𝗶𝘁𝗵 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝘆 𝗦𝘁𝗮𝗰𝗸:
+
+ Ensure that the selected database integrates well with your existing technology stack and frameworks.
+
+𝗙𝘂𝘁𝘂𝗿𝗲 𝗚𝗿𝗼𝘄𝘁𝗵:
+
+ Think about the longterm scalability and growth of your application and whether the chosen database can accommodate future needs.
+
+Based on my understanding, I've compiled a list of databases, which I've updated from the diagram initially provided by Satish Gupta. Please note that this list may not cover all databases, and I might have overlooked some. Additionally, there may be databases that can serve multiple use cases. The intention here is to categorise databases based on use cases or sql/nosql/newsql databases
+
+
+Remember that there is no one size fits all solution, and the best database choice depends on the unique characteristics of your project.
+
+
+EMR
+Redshift
+Athena
+Glue
+S3
+Lambda
+EC2
+
+Building Data Pipelines has levels to it:
+
+- level 0
+
+Understand the basic flow: Extract → Transform → Load (ETL) or ELT
+
+This is the foundation.
+- Extract: Pull data from sources (APIs, DBs, files)
+- Transform: Clean, filter, join, or enrich the data
+- Load: Store into a warehouse or lake for analysis
+You’re not a data engineer until you’ve scheduled a job to pull CSVs off an SFTP server at 3AM!
+
+
+level 1
+
+Master the tools:
+- Airflow for orchestration
+- dbt for transformations
+- Spark or PySpark for big data
+- Snowflake, BigQuery, Redshift for warehouses
+- Kafka or Kinesis for streaming
+
+Understand when to batch vs stream. Most companies think they need real-time data. They usually don’t.
+
+level 2
+Handle complexity with modular design:
+- DAGs should be atomic, idempotent, and parameterized
+- Use task dependencies and sensors wisely
+- Break transformations into layers (staging → clean → marts)
+- Design for failure recovery. If a step fails, how do you re-run it? From scratch or just that part?
+
+Learn how to backfill without breaking the world.
+
+level 3
+Data quality and observability:
+- Add tests for nulls, duplicates, and business logic
+- Use tools like Great Expectations, Monte Carlo, or built-in dbt tests
+- Track lineage so you know what downstream will break if upstream changes
+
+Know the difference between:
+- a late-arriving dimension
+- a broken SCD2
+- and a pipeline silently dropping rows
+
+At this level, you understand that reliability > cleverness.
+
+level 4
+Build for scale and maintainability:
+- Version control your pipeline configs
+- Use feature flags to toggle behavior in prod
+- Push vs pull architecture
+- Decouple compute and storage (e.g. Iceberg and Delta Lake)
+- Data mesh, data contracts, streaming joins, and CDC are words you throw around because you know how and when to use them.
+
+What else belongs in the journey to mastering data pipelines?

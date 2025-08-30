@@ -1,0 +1,129 @@
+📘 Important Keywords in Strings and DSA
+
+=======================
+String Related Keywords
+=======================
+
+1. Anagram:
+   - Two strings are anagrams if they contain the same characters with the same frequency, but possibly in different order.
+   - Example: "listen" and "silent".
+
+2. Palindrome:
+   - A string that reads the same forward and backward.
+   - Example: "madam", "racecar".
+
+3. Substring:
+   - A contiguous sequence of characters within a string.
+   - Example: Substrings of "abc" → "a", "ab", "abc", "b", "bc", "c".
+
+4. Subsequence:
+   - A sequence derived by deleting zero or more characters without changing the order of the remaining characters.
+   - Example: Subsequences of "abc" → "a", "b", "c", "ab", "ac", "bc", "abc".
+
+5. Permutation:
+   - An arrangement of all elements of a set/string in every possible order.
+   - Example: Permutations of "abc" → "abc", "acb", "bac", "bca", "cab", "cba".
+
+6. Combination:
+   - A selection of items without caring about order.
+   - Example: Combinations of "abc" taking 2 → "ab", "ac", "bc".
+
+7. Prefix:
+   - A substring that occurs at the beginning of a string.
+   - Example: Prefixes of "abc" → "a", "ab", "abc".
+
+8. Suffix:
+   - A substring that occurs at the end of a string.
+   - Example: Suffixes of "abc" → "c", "bc", "abc".
+
+9. Isomorphic Strings:
+   - Two strings are isomorphic if characters in one can be replaced to get the other, with one-to-one mapping.
+   - Example: "egg" and "add" → e→a, g→d.
+
+10. Pangram:
+    - A sentence that contains every letter of the alphabet at least once.
+    - Example: "The quick brown fox jumps over the lazy dog".
+
+11. Hamming Distance:
+    - The number of positions at which corresponding characters are different.
+    - Example: Hamming distance between "karolin" and "kathrin" = 3.
+
+
+====================
+Core DSA Concepts
+====================
+
+1. Array:
+   - A collection of elements stored in contiguous memory locations, accessed by index.
+   - Example: arr = [10, 20, 30]; arr[1] = 20
+   - Time Complexity:
+     - Access: O(1)
+     - Search: O(n)
+     - Insert/Delete (middle): O(n)
+
+2. Linked List:
+   - A linear data structure where each element (node) stores data and a pointer to the next node.
+   - Example: 10 -> 20 -> 30 -> None
+   - Advantages: Dynamic size, easy insertion/deletion.
+   - Drawback: O(n) access time.
+
+3. Stack (LIFO):
+   - Last In First Out structure. Insertions/deletions happen at one end (top).
+   - Example: Undo operation, balanced parentheses check.
+   - Operations: push(), pop(), peek()
+
+4. Queue (FIFO):
+   - First In First Out structure. Insertions at rear, deletions at front.
+   - Example: Print queue, CPU scheduling.
+   - Operations: enqueue(), dequeue()
+
+5. Hashing (Hash Table / Hash Map):
+   - Technique to map keys to values for efficient lookup.
+   - Average Time Complexity: O(1)
+   - Example: phonebook["Alice"] = "9876543210"
+
+6. Recursion:
+   - A function calling itself until a base condition is reached.
+   - Example: Factorial n! = n * (n-1)!
+
+7. Tree:
+   - A hierarchical structure with root and child nodes.
+   - Binary Tree: Each node has at most 2 children (left, right).
+   - Example Traversals:
+     - Inorder (LNR), Preorder (NLR), Postorder (LRN).
+
+8. Binary Search Tree (BST):
+   - A binary tree where left < root < right.
+   - Allows fast search, insert, delete in O(log n) average.
+
+9. Graph:
+   - A set of nodes (vertices) connected by edges.
+   - Representations: Adjacency List, Adjacency Matrix.
+   - Algorithms: BFS, DFS, Dijkstra, Kruskal, Prim.
+
+10. Heap:
+    - A complete binary tree with heap property:
+      - Max-Heap: parent ≥ children
+      - Min-Heap: parent ≤ children
+    - Applications: Priority Queue, Heap Sort.
+
+11. HashSet / HashMap in Python:
+    - HashSet → `set()`, stores unique elements.
+    - HashMap → `dict()`, key-value pairs.
+
+12. Dynamic Programming (DP):
+    - Solving problems by breaking them into subproblems and storing their results.
+    - Example: Fibonacci with memoization.
+
+13. Greedy Algorithm:
+    - Makes locally optimal choices at each step.
+    - Example: Activity selection, Huffman coding.
+
+14. Divide and Conquer:
+    - Divides problem → solves subproblems → merges results.
+    - Example: Merge Sort, Quick Sort.
+
+15. Big O Notation:
+    - Describes time/space complexity growth with input size.
+    - Common: O(1), O(log n), O(n), O(n log n), O(n^2).
+

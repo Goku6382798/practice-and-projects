@@ -1,0 +1,112 @@
+
+# System Design Preparation Guide - Regular Study
+
+## 1. Basics of System Design
+- What is System Design? → Designing architecture to meet scalability, availability, reliability requirements.
+- Functional vs Non-Functional Requirements
+- CAP Theorem: Consistency, Availability, Partition Tolerance
+- ACID vs BASE Properties
+
+## 2. Scalability Concepts
+- Vertical Scaling vs Horizontal Scaling
+- Stateless vs Stateful Services
+- Database Scaling: Sharding, Replication, Partitioning
+
+## 3. Networking Fundamentals
+- Client-Server Model
+- DNS (Domain Name System)
+- HTTP/HTTPS Basics
+- REST vs RPC vs GraphQL APIs
+- CDN (Content Delivery Network)
+
+## 4. Load Balancing
+- What is a Load Balancer?
+- Types: Layer 4 (Transport), Layer 7 (Application)
+- Algorithms: Round Robin, Least Connections, Consistent Hashing
+- Health Checks and Failover
+
+## 5. Caching
+- Why caching? Reduce latency, improve throughput.
+- Cache Types: Client-side, CDN, Reverse Proxy, Application Cache, Database Cache
+- Cache Strategies:
+  - Write-through
+  - Write-around
+  - Write-back
+- Cache Eviction Policies: LRU, LFU, FIFO
+- Tools: Redis, Memcached
+
+## 6. Database Design
+- Relational Databases (SQL)
+- NoSQL Databases (Key-Value, Document, Columnar, Graph)
+- Normalization vs Denormalization
+- Indexing
+- Primary Key vs Foreign Key
+- Transactions, Isolation Levels
+- Eventual Consistency
+
+## 7. Storage Systems
+- File Storage, Block Storage, Object Storage (e.g., S3)
+- Data Lakes vs Data Warehouses
+- Backup & Recovery Strategies
+
+## 8. Messaging and Asynchronous Systems
+- Message Queues (RabbitMQ, Kafka, SQS)
+- Publish-Subscribe Model
+- Event-driven Architectures
+- Idempotency and Message Ordering
+
+## 9. Microservices Architecture
+- Monolith vs Microservices
+- Service Discovery
+- API Gateway
+- Communication: Synchronous (REST/gRPC) vs Asynchronous (MQ/Kafka)
+- Circuit Breakers and Retries
+- Saga Pattern for distributed transactions
+
+## 10. Security in System Design
+- Authentication vs Authorization
+- OAuth2, JWT
+- SSL/TLS
+- CORS (Cross-Origin Resource Sharing)
+- Data Encryption (at rest, in transit)
+
+## 11. Monitoring and Logging
+- Metrics Collection (Prometheus, CloudWatch)
+- Distributed Tracing (Jaeger, Zipkin)
+- Centralized Logging (ELK Stack, Splunk)
+- Alerts and Dashboards (Grafana)
+
+## 12. Design Patterns in System Design
+- Singleton, Factory, Observer, Proxy, Strategy
+- CQRS (Command Query Responsibility Segregation)
+- Event Sourcing
+
+## 13. High-Level Design (HLD) vs Low-Level Design (LLD)
+- HLD: Architectural overview (components, interactions, tech stack)
+- LLD: Class diagrams, DB schema, API specs
+
+## 14. Common System Design Problems (Interview Style)
+- Design a URL Shortener (TinyURL)
+- Design a Social Media Feed (Twitter/Instagram)
+- Design a Messaging System (WhatsApp/Slack)
+- Design an E-commerce System (Amazon/Flipkart)
+- Design a Ride-Sharing App (Uber)
+- Design a Video Streaming Service (YouTube/Netflix)
+- Design a Search Autocomplete System
+- Design a Payment System
+
+## 15. Trade-offs in System Design
+- Consistency vs Availability (CAP)
+- Latency vs Throughput
+- SQL vs NoSQL
+- Caching vs Freshness
+- Batch vs Real-time Processing
+
+---
+
+# Preparation Strategy
+- Review 1–2 system design concepts daily (caching, load balancing, etc.).
+- Solve 2–3 design problems per week, focusing on trade-offs.
+- Draw diagrams (sequence diagrams, architecture diagrams).
+- Practice explaining design choices out loud (important in interviews).
+- Read "Designing Data-Intensive Applications" (Martin Kleppmann) for deep theory.

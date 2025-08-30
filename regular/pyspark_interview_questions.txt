@@ -1,0 +1,44 @@
+Intro:
+1. Experience with PySpark?
+2. Why PySpark? Applied how?
+
+Basics:
+3. Architecture of PySpark?
+4. PySpark vs Spark?
+
+DataFrame:
+5. DataFrame vs RDD?
+6. Transformations vs Actions?
+7. Common DataFrame operations?
+
+Optimization:
+8. Optimize PySpark jobs?
+9. Handle skewed data?
+
+Serialization:
+10. Serialization in PySpark?
+11. Compression codec choice?
+
+Null Handling:
+12. Deal with nulls?
+13. Preferred strategies?
+
+SQL:
+14. PySpark SQL experience?
+15. Execute SQL on DataFrames?
+
+Broadcasting:
+16. What is broadcasting?
+17. Example where it helps?
+
+Monitoring:
+18. How to monitor jobs?
+19. Importance of logging?
+
+Integration:
+20. Integration with big data tools?
+21. External data transfer handling?
+
+Project:
+22. Example project?
+23. Challenges faced and solutions?

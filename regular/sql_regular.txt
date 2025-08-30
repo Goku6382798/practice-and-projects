@@ -1,0 +1,109 @@
+
+# SQL Preparation Guide - Regular Study
+
+## 1. Basics of SQL
+- What is SQL? Structured Query Language for interacting with relational databases.
+- Categories of SQL Commands:
+  - **DDL (Data Definition Language):** CREATE, ALTER, DROP, TRUNCATE, RENAME
+  - **DML (Data Manipulation Language):** SELECT, INSERT, UPDATE, DELETE
+  - **DCL (Data Control Language):** GRANT, REVOKE
+  - **TCL (Transaction Control Language):** COMMIT, ROLLBACK, SAVEPOINT
+  - **DQL (Data Query Language):** SELECT (sometimes classified separately)
+
+## 2. Constraints
+- PRIMARY KEY
+- FOREIGN KEY
+- UNIQUE
+- CHECK
+- NOT NULL
+- DEFAULT
+
+## 3. Operators
+- Arithmetic Operators (+, -, *, /, %)
+- Comparison Operators (=, <>, >, <, >=, <=)
+- Logical Operators (AND, OR, NOT)
+- BETWEEN, IN, LIKE, IS NULL
+
+## 4. Joins
+- INNER JOIN
+- LEFT JOIN (LEFT OUTER)
+- RIGHT JOIN (RIGHT OUTER)
+- FULL JOIN (FULL OUTER)
+- CROSS JOIN
+- SELF JOIN
+- USING and NATURAL JOIN
+
+## 5. Subqueries
+- Single-row Subqueries
+- Multi-row Subqueries (IN, ANY, ALL)
+- Correlated Subqueries
+- EXISTS vs IN
+
+## 6. Set Operations
+- UNION
+- UNION ALL
+- INTERSECT
+- EXCEPT / MINUS
+
+## 7. Aggregate Functions
+- COUNT, SUM, AVG, MIN, MAX
+- GROUP BY, HAVING
+- ROLLUP, CUBE, GROUPING SETS
+
+## 8. Window Functions
+- ROW_NUMBER()
+- RANK(), DENSE_RANK()
+- NTILE()
+- LAG(), LEAD()
+- OVER(PARTITION BY … ORDER BY …)
+
+## 9. Views & Materialized Views
+- CREATE VIEW, DROP VIEW
+- Advantages: Simplification, security, abstraction
+- Materialized View: Stores physical data, can be refreshed
+
+## 10. Indexes
+- CREATE INDEX, DROP INDEX
+- Clustered vs Non-Clustered Index
+- Advantages: Faster lookups
+- Disadvantages: Slower writes, storage overhead
+
+## 11. Transactions & ACID Properties
+- **ACID:** Atomicity, Consistency, Isolation, Durability
+- COMMIT, ROLLBACK, SAVEPOINT
+- Isolation Levels: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE
+
+## 12. Stored Procedures and Functions
+- Stored Procedures: Precompiled SQL + logic
+- Functions: Return a value, can be used inside queries
+
+## 13. Triggers
+- BEFORE and AFTER triggers
+- Row-level vs Statement-level
+- Use cases: Auditing, enforcing rules
+
+## 14. Performance Tuning Basics
+- EXPLAIN / EXPLAIN ANALYZE (query plan)
+- Indexing strategy
+- Normalization vs Denormalization trade-offs
+
+## 15. Normalization
+- 1NF, 2NF, 3NF, BCNF
+- Advantages: Remove redundancy, maintain integrity
+- Denormalization: Performance optimization
+
+## 16. Advanced Features (depending on DBMS)
+- JSON support (PostgreSQL, MySQL)
+- Full-text search
+- Common Table Expressions (CTE) – WITH clause
+- Recursive CTEs
+- Partitioning tables
+
+---
+
+# Preparation Strategy
+- Daily mix: Write 5–10 queries from basic → advanced (LeetCode SQL, Hackerrank SQL).
+- Alternate focus: 1 day Joins/Subqueries, next day Aggregates/Window functions.
+- Review theory of constraints, ACID, normalization regularly.
+- Practice explaining queries (important for interviews).
+

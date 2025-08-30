@@ -1,0 +1,38 @@
+1. What is Kafka?
+Apache Kafka is an open-source system designed for:
+✅ Messaging – Sending and receiving real-time data
+✅ Streaming – Processing data as it arrives
+✅ Distributed Storage – Storing data across multiple servers
+
+It is used for applications that need fast, scalable, and fault-tolerant data processing.
+
+2. How Kafka Works?
+Kafka follows a Pub-Sub (Publish-Subscribe) model:
+🔹 Producers → Send messages
+🔹 Topics → Organize messages
+🔹 Brokers → Store/distribute
+🔹 Consumers → Receive/process
+
+Think of Kafka as a giant message queue.
+
+3. Key Kafka Concepts:
+✅ Broker → Handles Kafka requests
+✅ Topic → Stores messages
+✅ Partition → Splits topics for scale
+✅ Offset → Unique ID for messages
+✅ Consumer Group → Multiple consumers work together
+
+4. Why Use Kafka?
+🔹 High Throughput
+🔹 Scalability
+🔹 Fault Tolerance
+🔹 Real-Time Processing
+
+Use Cases:
+✅ Log Monitoring
+✅ Fraud Detection
+✅ Chat Applications
+✅ Real-Time Analytics
+
+5. Kafka vs. Traditional Messaging Queues
+Kafka suits large-scale streaming, traditional MQs suit smaller tasks.

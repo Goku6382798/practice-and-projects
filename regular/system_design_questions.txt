@@ -1,0 +1,43 @@
+Fresher Level:
+1. URL shortening
+2. Chat app
+3. File storage
+4. Social media
+5. Search engine
+6. E-commerce
+7. Ride-sharing
+8. Video streaming
+9. Recommendation system
+10. Food delivery
+11. Parking system
+12. Music streaming
+13. Ticket booking
+14. Note app
+15. Weather forecast
+16. Email
+17. File sync
+18. Calendar app
+19. Quiz platform
+20. Auth system
+
+Experienced Level:
+1. Bit.ly like shortener
+2. Redis-like store
+3. Facebook-like network
+4. Netflix-like recommender
+5. HDFS
+6. WhatsApp-like chat
+7. Google crawler
+8. Memcached cache
+9. CDN like Cloudflare
+10. Scalable search like Google
+11. Uber
+12. YouTube
+13. Zomato-like food delivery
+14. Google Docs
+15. Amazon
+16. Marketplace recommender
+17. Fault-tolerant DB
+18. Twitter-like event system
+19. Instagram
+20. Task scheduler

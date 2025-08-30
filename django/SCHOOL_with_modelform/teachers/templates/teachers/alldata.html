@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teachers</title>
+</head>
+<body>
+  <ul>
+    {% for teacher in alldata %}
+      <li>
+        <a href="{% url 'update' teacher.id %}">{{ teacher.name }}</a>
+        <form action="{% url 'delete' teacher.id %}" method="POST" style="display:inline;">
+          {% csrf_token %}
+          <button type="submit" onclick="return confirm('Delete {{ teacher.name }}?');">Delete</button>
+        </form>
+      </li>
+    {% empty %}
+      <li>No teachers yet.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
