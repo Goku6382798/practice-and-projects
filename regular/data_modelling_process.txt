@@ -1,0 +1,114 @@
+Data engineers do extract the data from source and do the data modelling
+
+SRC --------> STAGE ----------> TRANSFORM ------------> SERVE
+
+RAW --------> Enriched --------> Curated
+
+Source -------> Bronze -------> Silver ---------> Gold
+
+Incremental Load 
+  Persistent
+  Transient
+
+Lets suppose we have a table with following columns
+  order_id, order_date, customer_id, customer_name, customer_email, product_id, product_name, product_category, quantity, unit_price, payment_type, country, last_updated  
+
+We add the data as per incremental load
+
+So lets start creating the data modelling as per the above columns we will do it one by one
+
+Dim_customer:-
+customer_id, customer_name, customer_email, Dimcustomerkey(and add a surrogate key because the customer_id can be weird which we will hard or typical to use and remove duplicates)
+
+Dim_products:-
+product_id, product_name, product_category,Dimproductkey(Same reason which was in customer)
+
+Dim_payments:-
+payment_type, Dimpaymentkey(Same reason which was in customer)
+
+Dim_region:- 
+country, Dimregionkey(Same reason which was in customer)
+
+And one big table without the facts like quantity, unit_price which we will be using inside the fact table
+
+Dim_sales:-
+order_id, order_date, customer_id, customer_name, customer_email, product_id, product_name, product_category, payment_type, country, last_updated, Dimsaleskey(Same reason which was in customer)
+
+While creating the Fact table we will use all the Dimkeys that were created inside dim tables
+FACT Table:-
+Dimcustomerkey, Dimproductkey, Dimpaymentkey, Dimregionkey, Dimsaleskey, quantity, unit_price
+
+Below is the query for more understanding:-
+
+SELECT
+ Dimcustomerkey, 
+ Dimproductkey, 
+ Dimpaymentkey, 
+ Dimregionkey,
+ Dimsaleskey, 
+ F.quantity, 
+ F.unit_price
+FROM
+ datamodeling.silver.silver_table F
+LEFT JOIN
+ datamodeling.gold.dimcustomers C
+ ON F.customer_id = C.customer_id
+LEFT JOIN
+ datamodeling.gold.dimproducts P
+ ON F.product_id = P.product_id
+LEFT JOIN
+ datamodeling.gold.dimregions R
+ ON F.country_id = R.country
+LEFT JOIN
+ datamodeling.gold.dimpayments PY
+ ON F.payment_type = PY.payment_type
+LEFT JOIN
+ datamodeling.gold.dimsales S
+ ON F.order_id = S.order_id 
+ 
+
+
+
+Types of Data Model
+1. Conceptual
+   High-level view
+   Entities and their relationships
+2. Logical
+   Includes attributes, relationships
+   No concern for data types or DBMS
+3. Physical
+   Real implementation
+   Data types, Constraints, indexes, partitions
+   
+OLTP VS OLAP MODELS
+ ONLINE TRANSACTIONAL PROCESS
+ Writes Normalisation 1NF 2NF 3NF
+ 
+ ONLINE ANALYTICAL PROCESSING
+ DIMENSIONAL DATA MODEL
+ 
+
+
+
+In data modelling we take tables according to theme like all product details in a single dimensional table and then other tables then we assign the surrogate key and after creating the dimensional tables with theme we create a big dimensional table and then a fact table containing the surrogate key from all the dimensional table and sales figure 
+
+
+
+
+Types of Fact table :- 
+1. Transactional Fact Table
+2. Periodic Fact Table
+3. Accumulating Fact Table
+4. Factless Fact Table
+
+Types of Dimension Table:
+1. Conformed Dims
+2. Degenerate Dims
+3. Junk Dims
+4. Role Playing Dims
+
+
+SCD
+1. SCD Type 1 = We simply update the changes = Upsert
+2. SCD Type 2 = We simply use the Effective date and Expiry date as well and In use as per the requirement so we do have the record of all like from when till when it was in use and when we removed it from use. Or in this process we simply add different columns to maintain or keep records. Like if someone moved from 1 place to another like Someone moved from delhi to Nagpur so we will add the Nagpur address as active with effictive date and move delhi in non active and from which date.
+3. 

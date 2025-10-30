@@ -1,0 +1,151 @@
+
+# Data Science and EDA (Easy Guide)
+
+## 1. What is EDA?
+EDA = Exploratory Data Analysis. It’s like “tasting the ingredients before cooking.” You explore your dataset to understand its patterns, missing values, and relationships.
+
+---
+
+## 2. Steps in EDA
+
+### Univariate Analysis (One Column)
+- Focus: One feature at a time.
+- Tools:
+  ```python
+  df['age'].describe()
+  df['age'].hist()
+  sns.boxplot(df['age'])
+  ```
+
+### Bivariate Analysis (Two Columns)
+- Focus: Relationship between two features.
+  ```python
+  sns.scatterplot(x='age', y='salary', data=df)
+  sns.boxplot(x='gender', y='salary', data=df)
+  ```
+
+### Multivariate Analysis (Three or More Columns)
+- Focus: Relationships among multiple columns.
+  ```python
+  sns.pairplot(df)
+  sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+  ```
+
+### Handling Outliers
+- Use Boxplot to detect outliers.
+
+### Missing Values
+- Fill or drop missing values using:
+  ```python
+  df.isnull().sum()
+  df['age'].fillna(df['age'].median(), inplace=True)
+  ```
+
+---
+
+## 3. Common Graphs in EDA
+
+| Type 		| Graph 	| Used For 		| Tells You |
+|------		|--------	|-----------		|------------|
+| Univariate 	| Histogram 	| Numeric 		| Distribution |
+| Univariate 	| Box Plot 	| Numeric 		| Outliers |
+| Univariate 	| Bar/Pie 	| Categorical 		| Frequency |
+| Bivariate 	| Scatter 	| Numeric vs Numeric 	| Relationship |
+| Bivariate 	| Box/Bar 	| Category vs Numeric 	| Comparison |
+| Multivariate 	| Heatmap 	| Numeric 		| Correlation |
+| Multivariate 	| Pairplot 	| Numeric 		| Relationships |
+
+---
+
+## 4. Feature Engineering
+
+### What It Means
+Feature engineering = making your data more meaningful for ML.
+
+### Steps
+
+#### 1. Handling Categorical Columns
+Convert text → numbers.
+```python
+df['gender_encoded'] = df['gender'].map({'Male':1, 'Female':0})
+pd.get_dummies(df, columns=['department'])
+```
+
+#### 2. Feature Scaling
+Make numeric columns comparable.
+```python
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+scaler = MinMaxScaler()
+df['age_scaled'] = scaler.fit_transform(df[['age']])
+```
+
+#### 3. Feature Creation
+Combine or derive new columns.
+```python
+df['total_price'] = df['quantity'] * df['unit_price']
+```
+
+#### 4. Feature Transformation
+Fix skewed data using logs.
+```python
+import numpy as np
+df['salary_log'] = np.log(df['salary'] + 1)
+```
+
+#### 5. Date/Time Features
+Extract meaningful date parts.
+```python
+df['year'] = df['order_date'].dt.year
+df['month'] = df['order_date'].dt.month
+df['day_of_week'] = df['order_date'].dt.dayofweek
+```
+
+#### 6. Feature Selection
+Remove useless or highly correlated features.
+
+---
+
+## 5. pd.to_datetime() and errors='coerce'
+
+### What It Does
+Converts text to datetime objects.
+
+### What 'coerce' Means
+If pandas can’t convert a value, it replaces it with **NaT (Not a Time)** instead of crashing.
+
+```python
+prov['modifiedon'] = pd.to_datetime(prov['modifiedon'], errors='coerce')
+prov['createdon'] = pd.to_datetime(prov['createdon'], errors='coerce')
+```
+
+Example:
+```python
+df = pd.DataFrame({'date_col': ['2024-10-21', 'not_a_date', None]})
+df['date_col'] = pd.to_datetime(df['date_col'], errors='coerce')
+```
+
+Output:
+```
+     date_col
+0 2024-10-21
+1        NaT
+2        NaT
+```
+
+### Summary
+- `coerce` → invalid values become `NaT`
+- Prevents code from crashing
+- Allows easy cleanup later
+
+---
+
+## Summary Table
+
+| Step 			| What You Do 			| Why |
+|------			|--------------			|-----|
+| Handle Categories 	| Convert text to numbers 	| Models need numeric data |
+| Scale Features 	| Normalize values 		| Prevent bias |
+| Create Features 	| Add meaning 			| Improves predictions |
+| Transform Values 	| Log/sqrt etc. 		| Handle skew |
+| Extract Dates 	| Year, month, day 		| Find trends |
+| Select Features 	| Keep only useful ones 	| Simplifies model |
