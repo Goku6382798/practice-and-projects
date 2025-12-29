@@ -1,4 +1,3 @@
-
 # SQL Preparation Guide - Regular Study
 
 ## 1. Basics of SQL
@@ -51,11 +50,21 @@
 - ROLLUP, CUBE, GROUPING SETS
 
 ## 8. Window Functions
-- ROW_NUMBER()
-- RANK(), DENSE_RANK()
-- NTILE()
-- LAG(), LEAD()
-- OVER(PARTITION BY … ORDER BY …)
+| Window Function | What it Does      | Why Useful      |
+| --------------- | ----------------- | --------------- |
+| **ROW_NUMBER**  | Unique order      | Dedup, top 1    |
+| **RANK**        | Ranking with gaps | Leaderboard     |
+| **DENSE_RANK**  | Ranking no gaps   | Top N per group |
+| **LAG**         | Previous row      | Gaps, churn     |
+| **LEAD**        | Next row          | Forecasting     |
+| **FIRST_VALUE** | First item        | First event     |
+| **LAST_VALUE**  | Last item         | Latest event    |
+| **SUM OVER**    | Running totals    | Cumulative sums |
+| **AVG OVER**    | Running avg       | Moving average  |
+| **COUNT OVER**  | Running count     | Step sequence   |
+| **NTILE**       | Buckets           | Segmentation    |
+| **CUME_DIST**   | Percentile        | Top X%          |
+
 
 ## 9. Views & Materialized Views
 - CREATE VIEW, DROP VIEW
@@ -106,4 +115,3 @@
 - Alternate focus: 1 day Joins/Subqueries, next day Aggregates/Window functions.
 - Review theory of constraints, ACID, normalization regularly.
 - Practice explaining queries (important for interviews).
-

@@ -16,7 +16,7 @@ retail_db=>
 
 
 
-Fedrated example USE OF REDSHIFT WITH TABLUE WHY AND HOW :-
+Fedrated example USE OF REDSHIFT WITH TABLE WHY AND HOW :-
 To Isolate the traditional the RDS FROM TABLEAU WE CONNECT RDS TO REDSHIFT FOR SECURITY AND HEAVYWEIGHT PROCESSES REASONS
 We ETL the data in redshift
 

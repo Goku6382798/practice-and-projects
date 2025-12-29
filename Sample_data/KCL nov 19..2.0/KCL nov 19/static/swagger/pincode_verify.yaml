@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: PINCODE VERIFY API
+  version: "1.0"
+paths:
+  /api/pincode_verify:
+    post:
+      summary: Verify Pincode Type
+      description: |
+        Validates a given 6-digit Indian pincode and checks whether it belongs to a rural area or not. jwt optional
+      security : [ ]
+      tags:
+        - Pincode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - pincode
+              properties:
+                pincode:
+                  type: string
+                  example: "458888"
+                  description: "6-digit Indian postal code to verify."
+      responses:
+        "200":
+          description: Pincode verification successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Yes, you are eligible.
+                  response:
+                    type: object
+                    example: { }
+        "400":
+          description: Invalid or missing pincode
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 400
+                  message:
+                    type: string
+                    example: Pincode must be 6 digits and cannot start with 0
+                  response:
+                    type: object
+                    example: { }
+        "404":
+          description: Pincode not found or unverified
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: Sorry, you are not eligible
+                  response:
+                    type: object
+                    example: { }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+                  response:
+                    type: object
+                    example: { }

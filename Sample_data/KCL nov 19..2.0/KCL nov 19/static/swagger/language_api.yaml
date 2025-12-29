@@ -1,0 +1,68 @@
+openapi: 3.0.3
+info:
+  title: LANGUAGE API
+  version: "1.0"
+paths:
+  /api/get_languages:
+    post:
+      summary: Get available languages
+      description: Returns a list of available languages. JWT authentication is optional.
+      tags:
+        - Language
+      security: []   # JWT optional
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                latitude:
+                  type: string
+                  example: "28.6139"
+                  description: Latitude (can be blank or numeric string)
+                longitude:
+                  type: string
+                  example: "77.2090"
+                  description: Longitude (can be blank or numeric string)
+      responses:
+        "200":
+          description: Success, returns list of languages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  response:
+                    type: object
+                    properties:
+                      languages:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                              example: en
+                            name:
+                              type: string
+                              example: English
+                            native:
+                              type: string
+                              example: English
+                            symbol:
+                              type: string
+                              example: ""
+        "400":
+          description: Bad request, invalid input
+        "404":
+          description: No language found
+        "500":
+          description: Internal server error
+

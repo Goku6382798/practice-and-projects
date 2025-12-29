@@ -1,0 +1,168 @@
+openapi: 3.0.3
+info:
+  title: Edit Your Profile API
+  version: "1.0"
+
+paths:
+  /api/edit_your_profile:
+    post:
+      summary: Edit user profile
+      description: Updates or creates a user profile with name, nickname, user handle, gender, language, and interests.
+      tags:
+        - Profile
+      parameters:
+        - in: header
+          name: userid
+          required: true
+          schema:
+            type: string
+          description: Unique user ID of the user making the request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - userhandle
+              properties:
+                name:
+                  type: string
+                  example: John Doe
+                nickname:
+                  type: string
+                  example: Johnny
+                userhandle:
+                  type: string
+                  example: johndoe123
+                  description: User handle (automatically converted to lowercase)
+                gender:
+                  type: string
+                  enum: ["Male", "Female", "Prefer Not To Say"]
+                  example: Male
+                language:
+                  type: string
+                  example: English
+                interests:
+                  type: array
+                  maxItems: 5
+                  items:
+                    type: string
+                  example: ["Music", "Travel", "Technology"]
+
+            examples:
+              Only Name & Handle:
+                summary: Only required fields
+                value:
+                  name: "John Doe"
+                  userhandle: "John.Doe"
+
+              Full Profile:
+                summary: All valid fields
+                value:
+                  name: "John Doe"
+                  nickname: "JD"
+                  userhandle: "john.doe"
+                  gender: "Male"
+                  language: "English"
+                  interests: ["Music", "Sports"]
+
+              Invalid Gender:
+                summary: Invalid Gender Example
+                value:
+                  name: "Test User"
+                  userhandle: "test.user"
+                  gender: "Unknown"
+
+              Too Many Interests:
+                summary: More than 5 interests
+                value:
+                  name: "John Doe"
+                  userhandle: "johnny"
+                  interests: ["A", "B", "C", "D", "E", "F"]
+
+      responses:
+        "200":
+          description: Profile saved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Profile saved successfully.
+                  response:
+                    type: object
+                    example: {}
+
+        "400":
+          description: Bad Request – Missing or invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                  message:
+                    type: string
+                  response:
+                    type: object
+              examples:
+                Missing UserID:
+                  value:
+                    statusCode: 400
+                    message: "userid is required."
+                    response: {}
+                Missing Required Fields:
+                  value:
+                    statusCode: 400
+                    message: "Name and User Handle are required."
+                    response: {}
+                Too Many Interests:
+                  value:
+                    statusCode: 400
+                    message: "You can select a maximum of 5 interests."
+                    response: {}
+                Invalid Gender:
+                  value:
+                    statusCode: 400
+                    message: "{Please Select Your Gender}"
+                    response: {}
+
+        "409":
+          description: Conflict – Duplicate user handle
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                  message:
+                    type: string
+                  response:
+                    type: object
+              example:
+                statusCode: 409
+                message: User handle already taken.
+                response: {}
+
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                  message:
+                    type: string
+                  response:
+                    type: object

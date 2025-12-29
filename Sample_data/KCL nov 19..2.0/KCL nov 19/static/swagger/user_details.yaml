@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: USER DETAILSs
+  version: "1.0"
+paths:
+  /api/profile_setup:
+    post:
+      tags:
+        - Profile
+      summary: Fetch profile setup master data (languages, gender, interests)
+      description: |
+        Returns all data required for profile setup including:
+        - Supported **languages**  
+        - Available **genders**  
+        - Available **interests**  
+
+        The response is localized based on the `language` parameter provided in the request body.  
+        Defaults to **English (`en`)** if not specified.
+
+      security:
+        - bearerAuth: []   # JWT is optional, but included for consistency
+
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                language:
+                  type: string
+                  description: Preferred language code for localization (e.g., "en", "hi")
+                  example: en
+
+      responses:
+        '200':
+          description: Successful response with localized profile setup data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: Success
+                  response:
+                    type: object
+                    properties:
+                      languages:
+                        type: array
+                        description: List of supported languages
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                              example: en
+                            name:
+                              type: string
+                              example: English
+                            symbol:
+                              type: string
+                              example: E
+                            native:
+                              type: string
+                              example: English
+                      gender:
+                        type: array
+                        description: Localized gender options
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                              example: M
+                            name:
+                              type: string
+                              example: Male
+                            image:
+                              type: string
+                              example: https://example.com/male.png
+                      interests:
+                        type: array
+                        description: Localized interest options
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                              example: music
+                            name:
+                              type: string
+                              example: Music
+                            image:
+                              type: string
+                              example: https://example.com/music.png
+
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: Internal server error
+                  response:
+                    type: object
+                    example: {}

@@ -1,0 +1,87 @@
+MASTER LIST OF HIGH-IMPACT ANALYTICAL CONCEPTS
+
+1.  Statistical Concepts
+
+-   Mean, Median, Mode
+-   Variance, Standard Deviation
+-   IQR, Outlier Detection
+-   Z-Score
+-   Percentile, Quartile
+-   Correlation, Covariance
+
+2.  Customer Analytics Concepts
+
+-   RFM Analysis
+-   Customer Churn
+-   CLTV
+-   Cohort Analysis
+-   CAC
+-   A/B Testing
+-   Funnel Analysis
+
+3.  Product & Growth Metrics
+
+-   DAU/WAU/MAU
+-   Retention Rate
+-   Activation Rate
+-   Conversion Rate
+-   Drop-off Rate
+-   Feature Adoption
+
+4.  SQL Analytical Concepts
+
+-   Window Functions
+-   ROW_NUMBER, RANK, DENSE_RANK
+-   CUME_DIST, PERCENT_RANK
+-   NTILE
+-   LAG, LEAD
+-   GROUPING SETS, ROLLUP, CUBE
+-   CROSS JOIN LATERAL
+
+5.  Time-Series Concepts
+
+-   Moving Average
+-   EMA
+-   YOY, MOM, WOW
+-   Seasonality
+-   Stationarity
+
+6.  Data Cleaning & Outlier Detection
+
+-   IQR Method
+-   Z-Score Method
+-   Boxplot Statistics
+-   Winsorization
+-   Missing Value Treatment
+
+7.  Business Finance Metrics
+
+-   Revenue, GMV
+-   Margin, Profit %
+-   AOV
+-   Churn Rate
+-   ARPU
+
+8.  Machine Learning Prep Concepts
+
+-   Normalization
+-   Standardization
+-   One-Hot Encoding
+-   Binning/Bucketing
+
+9.  Data Warehousing Concepts
+
+-   Star Schema
+-   Snowflake Schema
+-   Dimensional Modeling
+-   SCD Types
+-   Fact vs Dimension
+
+10. ETL & Data Engineering Concepts
+
+-   Data Quality Checks
+-   Idempotent Operations
+-   Late-arriving Data
+-   Upsert/Merge
+-   Delta Lake
+-   Watermarking

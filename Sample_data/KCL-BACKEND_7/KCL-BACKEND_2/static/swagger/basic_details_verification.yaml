@@ -1,0 +1,159 @@
+openapi: 3.0.3
+info:
+  title: Basic Details Verification API
+  version: "1.0"
+  description: |
+    This API performs unified eligibility validation for:
+    - DOB (Age)
+    - Gender
+    - Pincode
+    - Contest Eligibility Rules
+ 
+   
+    Additional Logic:
+      • If **all three fields** — dob, gender, pincode — are present,  
+        a new document is inserted into **user_contest_mapping**.
+      • isEligible is always inserted as `true`.
+      • created_on, updated_on are stored in UTC datetime.
+      • created_by and updated_by are set to the request's userid.
+      • The response is translated in the certain language if the `languageCode` header is provided.
+ 
+servers:
+  - url: http://127.0.0.1:5001
+ 
+paths:
+  /api/basic_details_verification:
+    post:
+      summary: Validate eligibility using DOB, Gender, and Pincode.
+      tags:
+        - Eligibility
+ 
+      parameters:
+        - in: header
+          name: userid
+          required: true
+          schema:
+            type: string
+          description: Unique user identifier.
+
+        # ✅ Added languageCode header (ONLY CHANGE)
+        - in: header
+          name: languageCode
+          required: false
+          schema:
+            type: string
+            example: "en"
+          description: >
+            Language code for translated response.
+            Defaults to "en".  
+            Example values: "hi", "bn", "ta", "te".
+ 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EligibilityRequest"
+            examples:
+ 
+              OnlyDOB:
+                summary: Only DOB provided
+                value:
+                  dob: "10/10/1990"
+                  contest_id: "1"
+ 
+              OnlyPincode:
+                summary: Only Pincode provided
+                value:
+                  pincode: "744302"
+                  contest_id: "1"
+ 
+              OnlyGender:
+                summary: Only Gender provided
+                value:
+                  gender: "Male"
+                  contest_id: "1"
+ 
+              AllFieldsValid:
+                summary: All fields valid
+                value:
+                  dob: "10/10/2000"
+                  gender: "Male"
+                  pincode: "744302"
+                  contest_id: "1"
+ 
+      responses:
+        "200":
+          description: Eligible
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EligibleResponse"
+ 
+        "400":
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+ 
+        "404":
+          description: Rules missing
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+ 
+        "500":
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+ 
+components:
+ 
+  schemas:
+ 
+    EligibilityRequest:
+      type: object
+      required:
+        - contest_id
+      properties:
+        dob:
+          type: string
+          example: "10/10/2000"
+        gender:
+          type: string
+          example: "Male"
+        pincode:
+          type: string
+          example: "744302"
+        contest_id:
+          type: string
+          example: "1"
+ 
+    EligibleResponse:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+        message:
+          type: string
+        response:
+          type: object
+ 
+    ErrorResponse:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+        message:
+          type: string
+        response:
+          type: object
+          properties:
+            errors:
+              type: array
+              items:
+                type: string
