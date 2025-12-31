@@ -19,3 +19,7 @@ Sample_data/data/
 # Never commit secrets
 .env
 **/.env
+
+# Never commit secrets
+.env
+**/.env
